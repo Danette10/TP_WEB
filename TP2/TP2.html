@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flexbox</title>
+	<style type="text/css">
+
+
+		*{
+			box-sizing: border-box;
+		}
+
+		body{
+			font-size: 2em;
+			font-family: monospace;
+		}
+
+		.conteneur div{
+			padding: 20px 40px;
+		}
+
+		.conteneur{
+			height: 400px;
+			background-color: grey;
+			margin-bottom: 30px;
+			color: white;
+			display: flex;
+		}
+		#ex1{
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: space-around;
+			align-items: center;
+		}
+		#ex2{
+			flex-direction: row-reverse;
+			flex-wrap: nowrap;
+			justify-content: flex-start;
+			align-items: stretch;
+
+		}
+		#ex2 div{
+			flex: 1;
+		}
+		#ex2 div:nth-child(2){
+			flex: 0.5;
+		}
+
+		#ex3{
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: stretch;
+			justify-content: flex-start;
+		}
+		#ex3 div{
+			flex-basis: 25%;
+		}
+
+		#ex4{
+			flex-direction: column;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			align-items: flex-start;
+		}
+		#ex4 div:nth-child(4){
+			order: -1;
+		}
+
+		#ex5{
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+		#ex5 div:nth-child(2), #ex5 div:nth-child(5){
+			align-self: center;
+		}
+		#ex5 div:nth-child(3), #ex5 div:nth-child(6){
+			align-self: flex-end;
+		}
+		#ex5 div{
+			width: calc(100% / 6);
+		}
+
+		#ex6{
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			align-items: stretch;
+		}
+		#ex6 div:nth-child(1){
+			flex-basis: 50%;
+		}
+		#ex6 div:nth-child(2), #ex6 div:nth-child(3){
+			flex-basis: 25%;
+		}
+		#ex6 div:nth-child(4), #ex6 div:nth-child(5), #ex6 div:nth-child(6){
+			flex-basis: calc(100% / 6);
+		}
+
+
+		.conteneur div:nth-child(1){
+			background-color: red;
+		}
+
+		.conteneur div:nth-child(2){
+			background-color: orange;
+		}
+
+		.conteneur div:nth-child(3){
+			background-color: green;
+		}
+
+		.conteneur div:nth-child(4){
+			background-color: blue;
+		}
+
+		.conteneur div:nth-child(5){
+			background-color: indigo;
+		}
+
+		.conteneur div:nth-child(6){
+			background-color: purple;
+		}
+
+
+	</style>
+
+</head>
+<body>
+	<p>Exercice 1</p>
+	<div class="conteneur" id="ex1">
+		<div><p>Bloc 1</p></div>
+		<div><p>Bloc 2</p></div>
+		<div><p>Bloc 3</p></div>
+		<div><p>Bloc 4</p></div>
+		<div><p>Bloc 5</p></div>
+		<div><p>Bloc 6</p></div>
+	</div>
+
+	<p>Exercice 2</p>
+	<div class="conteneur" id="ex2">
+		<div><p>Bloc 1</p></div>
+		<div><p>Bloc 2</p></div>
+		<div><p>Bloc 3</p></div>
+		<div><p>Bloc 4</p></div>
+		<div><p>Bloc 5</p></div>
+		<div><p>Bloc 6</p></div>
+	</div>
+
+	<p>Exercice 3</p>
+	<div class="conteneur" id="ex3">
+		<div><p>Bloc 1</p></div>
+		<div><p>Bloc 2</p></div>
+		<div><p>Bloc 3</p></div>
+		<div><p>Bloc 4</p></div>
+		<div><p>Bloc 5</p></div>
+		<div><p>Bloc 6</p></div>
+	</div>
+
+	<p>Exercice 4</p>
+	<div class="conteneur" id="ex4">
+		<div><p>Bloc 1</p></div>
+		<div><p>Bloc 2</p></div>
+		<div><p>Bloc 3</p></div>
+		<div><p>Bloc 4</p></div>
+		<div><p>Bloc 5</p></div>
+		<div><p>Bloc 6</p></div>
+	</div>
+
+	<p>Exercice 5</p>
+	<div class="conteneur" id="ex5">
+		<div><p>Bloc 1</p></div>
+		<div><p>Bloc 2</p></div>
+		<div><p>Bloc 3</p></div>
+		<div><p>Bloc 4</p></div>
+		<div><p>Bloc 5</p></div>
+		<div><p>Bloc 6</p></div>
+	</div>
+
+	<p>Exercice 6</p>
+	<div class="conteneur" id="ex6">
+		<div><p>Bloc 1</p></div>
+		<div><p>Bloc 2</p></div>
+		<div><p>Bloc 3</p></div>
+		<div><p>Bloc 4</p></div>
+		<div><p>Bloc 5</p></div>
+		<div><p>Bloc 6</p></div>
+	</div>
+</body>
+</html>

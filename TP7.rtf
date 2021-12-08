@@ -1,0 +1,96 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww34140\viewh20040\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs36 \cf0 TP 7 
+\f1\b0\fs24 \
+PHP\
+\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b \cf0 Partie 1 :
+\f1\b0 \
+\
+Objectif : cr\'e9er un formulaire d'inscription dans la base de donn\'e9es.\
+table : users\
+champs : id, email et password\
+\
+Dans le site3 cr\'e9\'e9 dans le TP pr\'e9c\'e9dent :\
+\
+1 - Cr\'e9er une page 
+\f0\b inscription.php
+\f1\b0 \
+Elle contient un formulaire avec 2 champs email et password\
+\
+\
+2 - Cr\'e9er un script 
+\f0\b verification_inscription.php
+\f1\b0 \
+\
+Ce script v\'e9rifie les champs :\
+- existe, n'est pas vide\
+- le format de l'email est valide\
+- le mot de passe fait entre 6 et 12 caract\'e8res (utiliser pour cela la fonction strlen)\
+\
+Si une des v\'e9rification \'e9choue : redirection vers inscription.php avec un message get (cf. TP 6)\
+\
+\
+\
+Si tout est valid\'e9 :\
+\
+- Cr\'e9er une connexion avec la base de donn\'e9es (utiliser PDO)\
+- Ecrire une requ\'eate d'insertion dans la base de donn\'e9es\
+- Executer la requ\'eate\
+\
+\
+- Si l'ex\'e9cution a fonctionn\'e9 (cf. valeur de retour sur php.net) : redirection vers la page d'accueil avec message de confirmation 'Compte cr\'e9\'e9 avec succ\'e8s'\
+- Si l'ex\'e9cution n'a pas fonctionn\'e9 : retour au formulaire d'inscription avec un message d'erreur 'Erreur lors de l'inscription.'\
+\
+///\
+\
+V\'e9rifier l'inscription des utilisateurs en base de donn\'e9es.\
+\
+///\
+\
+\
+3 - S\'e9curiser les donn\'e9es\
+\
+- 
+\f0\b Pr\'e9parer la requ\'eate d'insertion
+\f1\b0 \
+Attention !! Il ne faut pas faire de concat\'e9nation des variable dans la requ\'eate (risque d'injection sql)\
+Il faut pr\'e9parer la requ\'eate.\
+- Ex\'e9cuter la requ\'eate pr\'e9par\'e9e avec execute et un tableau de valeurs\
+\
+- Ajouter une v\'e9rification \'e0 verification_inscription.php : l'email n'est pas d\'e9j\'e0 utilis\'e9.\
+Pr\'e9parer une requ\'eate select avec l'email envoy\'e9 dans le formulaire.\
+Ex\'e9cuter cette requete : \
+- si elle renvoie un r\'e9sultat, l'email est utilis\'e9 : redirection vers le formulaire avec un message d'erreur 'Email d\'e9j\'e0 utilis\'e9'\
+\
+- Enregistrer les mots de passe de fa\'e7on chiffr\'e9e (utiliser la fonction hash et l'algo sha512)\
+\
+\
+\
+\
+
+\f0\b Partie 2 :
+\f1\b0 \
+\
+Objectif : Modifier le code de v\'e9rification.php pour que les identifiants soient v\'e9rifi\'e9s \'e0 partir de la base de donn\'e9es.\
+\
+Dans verification.php :\
+\
+Pr\'e9parer une requ\'eate select avec les identifiants envoy\'e9s dans le formulaire.\
+Ex\'e9cuter cette requete : \
+- si elle renvoie un r\'e9sultat, le compte existe : connexion et redirection (cf. TP 6)\
+- sinon redirection vers le formulaire avec un message d'erreur 'Identifiants inconnus'\
+\
+\
+\
+\
+}
