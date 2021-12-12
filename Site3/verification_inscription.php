@@ -77,9 +77,7 @@ if(isset($email) && isset($password) && isset($username) && !empty($email) && !e
           'images' => $filename
         ]);
 
-
-
-        header('location: index.php?message=Compte créé avec succès');
+        header('location: index.php?message=Compte créé avec succès !');
         exit;
       }else {
         header('location: inscription.php?message=Le mot de passe n\'est pas compris entre 6 et 12 caractères !');

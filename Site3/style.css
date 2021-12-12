@@ -29,9 +29,14 @@ nav a{
   color: black;
 
 }
+
 nav a:hover{
-  text-decoration: underline;
-  color: green;
+  border-bottom: 3px solid purple;
+  color: black;
+  animation: fade 0.2s linear;
+}
+.active{
+  border-bottom: 3px solid purple;
 }
 form{
   display: flex;
@@ -44,4 +49,12 @@ form{
 }
 footer{
   background-color: lightgrey;
+}
+@keyframes fade {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
 }
