@@ -17,6 +17,9 @@
         if(isset($_SESSION['pseudo'])){?>
           <li><a href="deconnexion.php">Déconnexion</a></li>
           <li><a href="myprofile.php" class="header<?php echo ActivePage('myprofile.php'); ?>">Mon Profile</a></li>
+          <?php if($_SESSION['pseudo'] == 'admin'){ ?>
+            <li><a href="users.php" class="header<?php echo ActivePage('users.php'); ?>">Utilisateurs</a></li>
+          <?php } ?>
         <?php }else{ ?>
       <li><a href="inscription.php" class="header<?php echo ActivePage('inscription.php'); ?>">Inscription</a></li>
       <li><a href="connexion.php" class="header<?php echo ActivePage('connexion.php'); ?>">Connexion</a></li>

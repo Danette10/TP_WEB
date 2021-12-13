@@ -31,6 +31,7 @@ include ('includes/db.php');
 
     <table>
       <tr>
+        <th>Id</th>
         <th>Pseudo</th>
         <th>Email</th>
         <th>Actions</th>
@@ -42,9 +43,10 @@ include ('includes/db.php');
       foreach($result as $select){
        ?>
       <tr>
+        <td><?= $select['id'] ?></td>
         <td><?= $select['pseudo'] ?></td>
         <td><?= $select['email'] ?></td>
-        <td><a href="read.php" target="_blank">Consulter</a><br><a href="update.php" target="_blank">Modifier</a><br><a href="delete.php" target="_blank">Supprimer</a></td>
+        <td><a href="read.php?id=<?= $select['id'] ?>" target="_blank">Consulter</a><br><a href="update.php?id=<?= $select['id'] ?>" target="_blank">Modifier</a><br><a href="delete.php?id=<?= $select['id'] ?>" target="_blank">Supprimer</a></td>
       </tr>
     <?php } ?>
     </table>
