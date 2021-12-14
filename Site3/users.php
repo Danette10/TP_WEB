@@ -1,6 +1,10 @@
 <?php
 session_start();
 include ('includes/db.php');
+
+if (isset($_SESSION['pseudo'])) {
+
+
 ?>
 
 <!DOCTYPE html>
@@ -12,24 +16,39 @@ include ('includes/db.php');
     <link rel="stylesheet" href="style.css">
     <style media="screen">
     th, td{
-      border: solid 1px black;
       margin: 1em;
       text-align: center;
     }
     table{
       width: 100%;
       border: 2px;
-      border-collapse: collapse;
     }
     th{
       background-color: lightgrey;
+    }
+    a{
+      text-decoration: none;
+      color: black;
+    }
+    a:hover{
+      color: black;
+      border-bottom: 2px solid purple;
+      animation: fade 0.2s linear;
+    }
+    @keyframes fade {
+      from{
+        opacity: 0;
+      }
+      to{
+        opacity: 1;
+      }
     }
     </style>
   </head>
   <body>
     <?php include('includes/header.php'); ?>
 
-    <table>
+    <table class="table table-bordered border-dark">
       <tr>
         <th>Id</th>
         <th>Pseudo</th>
@@ -46,7 +65,11 @@ include ('includes/db.php');
         <td><?= $select['id'] ?></td>
         <td><?= $select['pseudo'] ?></td>
         <td><?= $select['email'] ?></td>
-        <td><a href="read.php?id=<?= $select['id'] ?>" target="_blank">Consulter</a><br><a href="update.php?id=<?= $select['id'] ?>" target="_blank">Modifier</a><br><a href="delete.php?id=<?= $select['id'] ?>" target="_blank">Supprimer</a></td>
+        <td>
+          <a href="read.php?id=<?= $select['id'] ?>" target="_blank">Consulter</a><br>
+          <a href="update.php?id=<?= $select['id'] ?>" target="_blank">Modifier</a><br>
+          <a href="delete.php?id=<?= $select['id'] ?>" target="_blank">Supprimer</a>
+        </td>
       </tr>
     <?php } ?>
     </table>
@@ -54,3 +77,7 @@ include ('includes/db.php');
     <?php include('includes/footer.php'); ?>
   </body>
 </html>
+<?php }else {
+  header('location: index.php');
+  exit;
+} ?>

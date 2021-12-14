@@ -67,7 +67,7 @@ include ('includes/db.php');
     <?php
     $query = $db->prepare("SELECT pseudo,email,password, images FROM users WHERE id = :id");
     $query->execute([
-      'id' => $_GET['id']
+      'id' => htmlspecialchars($_GET['id'])
     ]);
     $result = $query->fetchAll();
 

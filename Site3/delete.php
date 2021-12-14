@@ -5,7 +5,7 @@ include ('includes/db.php');
 
 $deleteuser = $db->prepare("DELETE FROM users WHERE id = :id");
 $deleteuser->execute([
-  'id' => $_GET['id']
+  'id' => htmlspecialchars($_GET['id'])
 ]);
 
 header('location: users.php');

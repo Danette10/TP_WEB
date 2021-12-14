@@ -4,7 +4,7 @@ include ('includes/db.php');
 
 $pseudo = $_POST['pseudo'];
 $email = $_POST['email'];
-$id = $_GET['id'];
+$id = htmlspecialchars($_GET['id']);
 // Change image
 if(isset($_FILES['image']) && !empty($_FILES['image']['name'])){
   		// Vérifier le type de fichier
